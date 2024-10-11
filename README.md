@@ -120,10 +120,10 @@ gatk ApplyVQSR \
 
 ```
 perl /home/rocky/Packages/exercise1/table_annovar.pl \
---vcfinput SRR1518158_sub.recal.BOTH_calls.vcf.gz \
-/home/rocky/Packages/exercise1/humandb/ -buildver hg38 \
+--vcfinput SRR1518158_sub.recal.vcf.gz /home/rocky/Packages/exercise1/humandb/ -buildver hg38 \
 -out SRR1518158_sub_calls_annot \
--remove -protocol refGeneWithVer,gnomad41_exome,clinvar_20240917,intervar_20180118,alphamissense \
+-remove \
+-protocol refGeneWithVer,gnomad41_exome,clinvar_20240917,intervar_20180118,alphamissense \
 -operation gx,f,f,f,f \
 -nastring . \
 -polish
