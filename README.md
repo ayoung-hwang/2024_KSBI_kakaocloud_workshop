@@ -95,12 +95,23 @@ gatk GenotypeGVCFs \
 gatk VariantRecalibrator \
 -R /home/rocky/Data/hg38/hg38.fa \
 -V SRR1518158_sub.vcf.gz \
--O SRR1518158_sub.raw.SNPs.recal \
---tranches-file SRR1518158_sub.raw.SNPs.tranches \
+-O SRR1518158_sub.raw.recal \
+--tranches-file SRR1518158_sub.raw.tranches \
 --resource:hapmap,known=false,training=true,truth=true,prior=15.0 /home/rocky/Data/hg38/hapmap_3.3.hg38.vcf.gz \
 --resource:mills,known=false,training=true,truth=true,prior=12.0 /home/rocky/Data/hg38/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz \
 --resource:dbsnp,known=true,training=false,truth=false,prior=2.0 /home/rocky/Data/hg38/dbsnp_146.hg38.vcf.gz \
 -an QD -an MQ -an MQRankSum -an ReadPosRankSum -an FS -an SOR \
+-mode BOTH
+```
+
+```
+gatk ApplyVQSR \
+-R /home/rocky/Data/hg38/hg38.fa \
+-V SRR1518158_sub.vcf.gz \
+--recal-file SRR1518158_sub.raw.recal \
+--tranches-file SRR1518158_sub.raw.tranches \
+-O SRR1518158_sub.recal.vcf.gz \
+-ts-filter-level 99.5 \
 -mode BOTH
 ```
 
@@ -111,9 +122,9 @@ gatk VariantRecalibrator \
 perl /home/rocky/Packages/exercise1/table_annovar.pl \
 --vcfinput SRR1518158_sub.recal.BOTH_calls.vcf.gz \
 /home/rocky/Packages/exercise1/humandb/ -buildver hg38 \
--out SRR1518158_sub_BOTH_calls_annot \
+-out SRR1518158_sub_calls_annot \
 -remove -protocol refGeneWithVer,gnomad41_exome,clinvar_20240917,intervar_20180118,alphamissense \
 -operation gx,f,f,f,f \
 -nastring . \
--polish \
+-polish
 ```
