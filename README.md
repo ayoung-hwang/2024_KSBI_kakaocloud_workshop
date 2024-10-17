@@ -76,17 +76,17 @@ gatk HaplotypeCaller \
 이번 실습에서는 진행하지 않음
 ```
 gatk GenomicDBImport \
-	-V [vcf file_list] \ 
-	-L [targets.interval_list] \ 
-	--genomicsdb-workspace-path [my_database] \
-	--tmp-dir=/path/to/large/tmp
+-V [vcf file_list] \
+-L [targets.interval_list] \
+--genomicsdb-workspace-path [my_database] \
+--tmp-dir=/path/to/large/tmp
 ```
 
 ```
-gatk GenotypeGVCFs \ 
-	-R [reference.fa] \ 
-	-V gendb://genomicDB \
-	-O [cohort.vcf]
+gatk GenotypeGVCFs \
+-R [reference.fa] \
+-V gendb://genomicDB \
+-O [cohort.vcf]
 ```
 
 
