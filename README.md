@@ -2,6 +2,13 @@
 
 ## Code
 ---
+### 0. To enter the instance
+
+```
+ssh -i bioinfo.pem rocky@[your_ip]
+```
+
+
 ### 1. BWA (Burrows-Wheeler Aligner) MEM (matching extension) algorithm & Samtools
 
 ```
