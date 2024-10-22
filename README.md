@@ -5,7 +5,7 @@
 ### 0. Type this code to enter your instance
 
 ```
-ssh -i bioinfo.pem rocky@[your_ip]
+ssh -i bioinfo.pem rocky@[your_public_ip]
 ```
 
 
