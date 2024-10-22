@@ -2,7 +2,7 @@
 
 ## Code
 ---
-### 0. To enter the instance
+### 0. Type this code to enter your instance
 
 ```
 ssh -i bioinfo.pem rocky@[your_ip]
