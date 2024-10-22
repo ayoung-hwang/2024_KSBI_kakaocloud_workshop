@@ -8,6 +8,12 @@
 ssh -i bioinfo.pem rocky@[your_public_ip]
 ```
 
+If you encounter a permission setting issue, please enter the following
+```
+chmod 400 bioinfo.pem
+```
+
+
 
 ### 1. BWA (Burrows-Wheeler Aligner) MEM (matching extension) algorithm & Samtools
 
